@@ -1,0 +1,98 @@
+.head {
+  display: inline-flex;
+  margin: 10px 0 0 40px;
+  width: 400px;
+  align-items: center;
+}
+.head img {
+  display: inline-block;
+}
+h1 {
+  display: inline-block;
+  margin-left: 15px;
+}
+#search-icon {
+  color: #fff;
+}
+h3 {
+  color: white;
+}
+.container {
+  margin-top: 20px;
+}
+.fas {
+  width: 20px !important;
+  height: 50px;
+}
+ul {
+  display: inline-block;
+  margin-left: 600px !important;
+  width: 500px !important;
+}
+.navbar-nav .nav-link {
+  width: 180px !important;
+  margin-left: 5px !important;
+  font-size: x-large;
+}
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+main form select {
+  display: inline-block !important;
+  width: auto !important;
+}
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.blink {
+  text-decoration: blink;
+  animation-name: blinker;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+body {
+  background-color: #152036 !important;
+}
+
+a {
+  color: rgb(245 164 37) !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: rgb(245 164 37) !important;
+  border-color: rgb(245 164 37) !important;
+}
+
+.table tr td {
+  border: 1px solid rgb(255, 255, 255);
+  color: white !important;
+}
+.table thead th {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.fas {
+  width: 100px;
+  height: 50px;
+}
+
+.table {
+  color: white !important;
+}
+.footer1 {
+  width: 100%;
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+}

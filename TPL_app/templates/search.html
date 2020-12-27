@@ -1,0 +1,37 @@
+{% if teachers %}
+    <table class="table" style="display: inline-block; width:600px;">
+        <thead>
+            <th>Teacher name</th>
+            <th>Specialization</th>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+            <td><a href="teacher-profile/{{teacher.id}}">{{teacher.gender}} {{teacher.first_name}} {{teacher.last_name}}</a></td>
+            <td>{{teacher.specialization}}</td>
+            </tr> 
+            {% endfor %}
+            </tbody>
+        {% else %}
+        <div>No teachers found.</div>
+    </ul>
+{% endif %}
+{% if specialization %}
+    <table class="table" style="display: inline-block; width:600px;">
+        <thead>
+            <th>Specialization</th>
+            <th>Teacher name</th>
+        </thead>
+        <tbody>
+        {% for subject in specialization %}
+        <tr>
+        <td>{{subject.specialization}}</td>
+        <td><a href="teacher-profile/{{subject.id}}">{{subject.gender}} {{subject.first_name}} {{subject.last_name}}</a></td>
+        </tr> 
+        {% endfor %}
+        </tbody>
+    </table>
+        {% else %}
+        <div>No subjects found.</div>
+        
+{% endif %}

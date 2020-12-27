@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/home_page_style.css' %}" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="head">
+            <img src="{% static 'images/logo.png' %}" width="200px">
+            <div class="empty"></div>
+            <h1 class="display-3" >TPL</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                {% if request.session.type == "teacher" %}<a class="nav-link active" href="teacher-profile/{{request.session.user_id}}">My profile</a>{% endif %}
+                {% if request.session.type == "parent" %}<a class="nav-link active" href="parent-profile/{{request.session.user_id}}">My profile</a>{% endif %}
+            </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/logout">Logout</a>
+                </li>
+          </ul>
+        </nav>
+            <div class="container">
+              <div class="row">
+                <h3>Search</h3>
+              <div>
+                <i id="search-icon" class="fas fa-search"></i>
+                <input id="user-input" placeholder="Search">
+              </div>
+            </div>
+            <div class="row">
+              <div id="replaceable-content">
+                {% include 'search.html' %}
+            </div>
+              </div>
+            </div>
+            <div class="footer1">
+              <footer>Teacher Private Lessons - 2020</footer>
+            </div>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script> 
+
+</body>
+</html>

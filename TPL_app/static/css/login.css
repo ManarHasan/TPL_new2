@@ -1,0 +1,14 @@
+img{
+    border-radius:8px !important;
+    margin-top:5px !important;
+}
+.card{
+    display: inline-block;
+    border:1px solid black !important;
+    border-radius:10px;
+    margin: 10px;
+    background-image: linear-gradient(to right , #099136 , #ef473a);
+
+}
+
+

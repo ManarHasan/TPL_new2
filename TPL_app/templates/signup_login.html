@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registration Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup_login_style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('img').hover(function(){
+                var temp = $(this).attr('src');
+                $(this).attr('src', $(this).attr('alt-src'));
+                $(this).attr('alt-src', temp);
+            });
+            $('#parent-slide').click(function () {
+                $('#container-2').slideUp(function () {
+                    $('#teacher-education').focus();
+                })});
+            $('#parent-slide').click(function () {
+                $('#container-1').slideDown(function () {
+                    $('#tbnumber').focus();
+                });
+            });
+            $('#teacher-slide').click(function () {
+                $('#container-1').slideUp(function () {
+                    $('#tbnumber').focus();
+                })});
+            $('#teacher-slide').click(function () {
+                $('#container-2').slideDown(function () {
+                    $('#teacher-education').focus();
+                });
+            });
+        });
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("tbnumber").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("more-containers");
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Child " + (i+1)+ " Name"));
+                // Create an <input> element, set its type and name attributes
+                var input_1 = document.createElement("input");
+                input_1.type = "text";
+                input_1.style = "color: black"
+                input_1.name = "child_name" + i;
+                var input_2 = document.createElement("input");
+                input_2.type = "number";
+                input_2.style = "color: black"
+                input_2.name = "age" + i;
+                var input_3 = document.createElement("input");
+                input_3.type = "number";
+                input_3.style = "color: black"
+                input_3.name = "grade" + i;
+                container.appendChild(document.createElement("br"));
+                container.appendChild(input_1);
+                container.appendChild(document.createElement("br"));
+                container.appendChild(document.createTextNode("Child " + (i+1)+ " Age"));
+                container.appendChild(document.createElement("br"));
+                container.appendChild(input_2);
+                container.appendChild(document.createElement("br"));
+                container.appendChild(document.createTextNode("Child " + (i+1)+ " Grade"));
+                container.appendChild(document.createElement("br"));
+                container.appendChild(input_3);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="head">
+            <img src="{% static 'images/logo.png' %}" width="200px">
+            <h1 class="display-4" >TPL</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/lessons">Subjects</a>
+                </li>
+                </ul>
+        </nav>
+    
+	<div class="wrapper">
+        <div class="left">
+            <h4 class="left display-5">About our Website</h4>
+            <p class="about">
+                Welcome to our platform TPL! This platform links teacher's to parents, whereby teachers make various private lessons, which parents can sign their kids up to. The parents sign up with entering the data of their children and then sign up their kids to any class they wish! Go ahead sign up and give it a try! If you are a teacher please join our staff! 
+            </p>
+            <div class="pics">
+            <div class='row'>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'images/teacher.png' %}" alt-src="{% static 'images/logo.png' %}">
+                    <div class="card-body">
+                    <p class="card-text"> 200+ Coding Teachers</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'images/test2.png' %}" alt-src="{% static 'images/logo.png' %}">
+                    <div class="card-body">
+                    <p class="card-text">3000+ English Teachers</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'images/test3.png' %}" alt-src="{% static 'images/logo.png' %}">
+                    <div class="card-body">
+                    <p class="card-text">3000+ Math Teachers.</p>
+                    </div>
+                </div>
+                </div>
+                <div class='row'>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{% static 'images/test4.png' %}" alt-src="{% static 'images/logo.png' %}">
+                        <div class="card-body">
+                        <p class="card-text">3000+ Arabic Teachers</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{% static 'images/test5.png' %}" alt-src="{% static 'images/logo.png' %}">
+                        <div class="card-body">
+                        <p class="card-text">2500+ PT Teachers</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{% static 'images/test6.png' %}" alt-src="{% static 'images/logo.png' %}">
+                        <div class="card-body">
+                        <p class="card-text">3000+ History Teachers</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+        <div class="right">
+            <form action="/register" enctype="multipart/form-data" class="form-signin" method="post" style= "width: 450px;">
+                {% csrf_token %}   
+                <h2 class="form-signin-heading">Register</h2><br>
+                <input type="radio" class="btn-check" name="option" id="parent-slide" value="parent">
+                    <label class="btn btn-secondary" for="parent-slide">Parent</label>
+                <input type="radio" class="btn-check" name="option" id="teacher-slide" value="teacher">
+                    <label class="btn btn-secondary" for="teacher-slide">Teacher</label><br><br>
+                <input type="text" class="form-control" name="fname" placeholder="First Name" required><br>
+                <input type="lastname" class="form-control" name="lname" placeholder="Last Name" required><br>
+                <input type="text" class="form-control" name="email" placeholder="Email Address" required><br>
+                <input type="occupation" class="form-control" name="occupation" placeholder="Occupation" required><br>
+                <input type="password" class="form-control" name="password" placeholder="Password" required><br>
+                <input type="password" class="form-control" name="confirm" placeholder="Confirm Password" required><br>
+                <input type="file" class="form-control" name="pic">
+                <div id="container-1" style="display:none; width:308px; font:15px Verdana; border:solid 1px #CCC; padding:10px;">
+                    <label>Number of children:</label>
+                    <input type="number" class="form-control" id="tbnumber" name="number_of_children">
+                    <a href="#" id="filldetails" onclick="addFields()" class="btn-primary" style="color:white !important; text-decoration:none">Add Kids</a>
+                    <div id="more-containers">
+                    </div>
+        </div>
+        <div id="container-2" style="display:none; width:308px; font:15px Verdana; border:solid 1px #CCC; padding:10px;">
+                <div>
+                    <label>Education: </label>
+                    <div><select class="form-select" name="education" id="teacher-education">
+                        <option value="High School">High School</option>
+                        <option value="Bachelor's">Bacherlor's</option>
+                        <option value="Master's">Master's</option>
+                        <option value="PHD">PHD</option>
+                        </select></div>
+                </div>
+                <div>
+                    <label>Specialization:</label>
+                    <div><select class="form-select" name="specialization" id="teacher-specialization">
+                        <option value="Arabic">Arabic</option>
+                        <option value="English">English</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="French">French</option>
+                        <option value="Religious Education">Religious Education</option>
+                        <option value="Physical Education">Physical Education</option>
+                        <option value="History">History</option>
+                        <option value="Geography">Geography</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Geology">Geology</option>
+                        <option value="Biology">Biology</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Music">Music</option>
+                        <option value="Economics">Economics</option>
+                        </select></div></div>
+                    <div><label>Gender</label>
+                    <div><select class="form-select" name="gender" id="teacher-gender">
+                        <option value="Mr.">Male</option>
+                        <option value="Ms.">Female</option>
+                        </select></div></div>
+        </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>   
+            </form>
+            <br>
+            <form action="/login" method="post" class="form-signin" style= "width: 450px;">
+                <h2 class="form-signin-heading"> login</h2><br>
+                {% csrf_token %}
+                <input type="radio" class="btn-check" id="login_parent" name="options" value="parent" required>
+                    <label class="btn btn-secondary" for="login_parent">Parent</label>
+                <input type="radio" class="btn-check" id="login_teacher" name="options" value="teacher" required>
+                    <label class="btn btn-secondary" for="login_teacher">Teacher</label><br><br>    
+                <input type="text" class="form-control" name="email" placeholder="Email Address" required><br>
+                <input type="password" class="form-control" name="password" placeholder="Password" required><br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+{% if messages %}
+<div class="messages" style="margin-left: 480px;">    
+    {% for message in messages %}    
+        <p {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: white; font-size: 24px;">{{ message }}</li>    
+    {% endfor %}
+</div>
+{% endif %}
+<div class="footer1">
+    <footer class="card-header">Teacher Private Lessons - 2020</footer>
+</div>
+</body>
+</html>

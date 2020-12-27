@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/teacher_profile_style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="head">
+            <img src="{% static 'images/logo.png' %}" width="100px">
+            <div class="empty"></div>
+            <h1 class="display-3" >TPL</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Login/Registration Page</a>
+            </li>
+            </ul>
+        </nav>
+
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr class="table-info">
+                <th>Title</th>
+                <th>Teacher</th>
+                <th>Time</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for lesson in all_lessons %}
+            <tr>
+                <td>{{lesson.title}} </td>
+                <td>{{lesson.teacher.gender}} {{lesson.teacher.first_name}} {{lesson.teacher.last_name}}</td>
+                <td>{{lesson.time}} </td>
+                <td>{{lesson.price}} </td>
+
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="footer1">
+        <footer>Teacher Private Lessons - 2020</footer>
+    </div>
+</body>
+</html>
